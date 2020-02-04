@@ -1,4 +1,4 @@
-.ScoreScreen {
+.ScoreScreenContainer {
     display: flex;
     flex-direction: row;
 }

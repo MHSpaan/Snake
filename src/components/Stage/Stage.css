@@ -9,12 +9,11 @@
 }
 
 .Cell-Snake {
-    background-color: red;
-
+    background-color: blue;
 }
 
 .Cell-Body {
-    background-color: orangered;
+    background-color: cyan;
 }
 
 .Cell-Candy {

@@ -9,27 +9,36 @@ export const useStage = (head: SnakeHead, body: SnakeBody) => {
 
     const updateStage = (prevStage: any[][]) => {
         if (!candy) {
-            setCandy(true);
             setStage(getRandomCandy(stage));
+            setCandy(true);
+            // if no candy, spawn a candy
         }
         const newStage = prevStage.map<any[]>((row: any[]) => (
-            row.map<any>((cell: any) => cell==='C' ? cell : 0)
+            row.map<any>((cell: any) => cell === 'C' ? cell : 0)
         ))
+        // clone the current Stage
+
         if (newStage[head.x][head.y] === 'C') {
-            body.pos.push({x: head.x, y: head.y});
+            body.pos.push({ x: head.x, y: head.y });
+            // add body fragment to the end of the body array
             setScore((prev) => prev + 1);
             setCandy(false)
+            // setCandy to false so the next time the stage gets updated a new candy will spawn
         }
         newStage[head.x][head.y] = 'S';
+        // set the new position for the Head
         body.pos.forEach((body) => {
             newStage[body.x][body.y] = 'B'
         });
+        // set the position of the body parts
+
         return newStage;
+        // return the updated stage
     }
 
     useEffect(() => {
         setStage((prev) => updateStage(prev));
-    }, [head, body])
+    }, [head])
 
-    return {stage, setStage, setCandy, score, setScore};
+    return { stage, setStage, score, setScore };
 }
