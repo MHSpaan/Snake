@@ -1,0 +1,23 @@
+.ScoreScreen {
+    display: flex;
+    flex-direction: row;
+}
+
+.StartButton {
+    width: max-content;
+    height: 30px;
+}
+
+.ScoreContainer {
+    margin-left: 15px;
+    border: solid 1px black;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.Score {
+    margin: 0;
+    align-self: center;
+}

@@ -1,0 +1,32 @@
+.Cell {
+    width: 15px;
+    height: 15px;
+    border: solid 0.1px grey;
+}
+
+.Cell-Empty {
+    background-color: black;
+}
+
+.Cell-Snake {
+    background-color: red;
+
+}
+
+.Cell-Body {
+    background-color: orangered;
+}
+
+.Cell-Candy {
+    background-color: green;
+}
+
+.BoardContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.RowContainer {
+    display: flex;
+    flex-direction: column;
+}
